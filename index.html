@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Black Salt | Restaurant & Bar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0a0a0a;
+            color: #e5e5e5;
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3, .brand-font {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-gradient {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .gold-text { color: #c5a059; }
+        .gold-bg { background-color: #c5a059; }
+        .nav-blur { backdrop-filter: blur(12px); background: rgba(10, 10, 10, 0.85); }
+        
+        /* Mobile Menu Animation */
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+            transform: translateX(100%);
+        }
+        #mobile-menu.active {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 nav-blur border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 md:h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="text-xl md:text-2xl font-bold tracking-tighter brand-font gold-text uppercase">The Black Salt</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="hover:text-amber-500 transition px-3 py-2 text-sm font-medium">Home</a>
+                        <a href="#about" class="hover:text-amber-500 transition px-3 py-2 text-sm font-medium">About</a>
+                        <a href="#menu" class="hover:text-amber-500 transition px-3 py-2 text-sm font-medium">Menu</a>
+                        <a href="#location" class="gold-bg text-black px-6 py-2 rounded-full text-sm font-bold hover:bg-white transition">Find Us</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Toggle -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="p-2 text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Side Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-black md:hidden">
+        <div class="flex flex-col h-full p-8">
+            <div class="flex justify-end">
+                <button id="close-menu" class="text-3xl text-gray-400">&times;</button>
+            </div>
+            <div class="flex flex-col space-y-8 mt-12 text-center">
+                <a href="#home" class="mobile-link text-2xl font-bold">Home</a>
+                <a href="#about" class="mobile-link text-2xl font-bold">About</a>
+                <a href="#menu" class="mobile-link text-2xl font-bold">Menu</a>
+                <a href="#location" class="mobile-link gold-text text-2xl font-bold">Find Us</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient h-screen flex items-center justify-center text-center px-6">
+        <div class="max-w-3xl">
+            <h4 class="gold-text tracking-[0.2em] md:tracking-[0.3em] uppercase mb-4 text-xs md:text-sm font-semibold">Welcome to Culinary Excellence</h4>
+            <h1 class="text-4xl md:text-7xl font-bold mb-6 text-white leading-tight">Where Great Food Meets Great Vibes</h1>
+            <p class="text-gray-300 text-base md:text-lg mb-8 md:text-10 max-w-xl mx-auto">Experience the finest North Indian and Multicuisine dining in the heart of Gurgaon Sector 90.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#menu" class="gold-bg text-black px-8 py-4 rounded-md font-bold hover:bg-white transition text-center">Explore Menu</a>
+                <a href="#location" class="border border-white px-8 py-4 rounded-md font-bold hover:bg-white hover:text-black transition text-center">Our Location</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 md:py-24 px-6 bg-zinc-900">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="relative order-2 md:order-1">
+                <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=800&q=80" alt="Restaurant Interior" class="rounded-lg shadow-2xl w-full">
+                <div class="absolute -bottom-4 -right-4 bg-amber-600 p-4 md:p-8 rounded-lg">
+                    <p class="text-2xl md:text-4xl font-bold text-white">4.4</p>
+                    <p class="text-xs md:text-sm text-amber-100">Google Rating</p>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 leading-snug text-white">Authentic, Elegant & <span class="gold-text">Simple</span></h2>
+                <p class="text-gray-400 mb-6 text-base md:text-lg">Located in Sapphire 90 Mall, The Black Salt is a culinary haven that caters to diverse palates. Whether you're craving rich North Indian classics or spicy Sichuan delights, our chefs craft every dish with precision.</p>
+                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                    <li class="flex items-center gap-3 text-sm">
+                        <i class="fas fa-check gold-text"></i>
+                        <span>Lounge Bar Ambiance</span>
+                    </li>
+                    <li class="flex items-center gap-3 text-sm">
+                        <i class="fas fa-check gold-text"></i>
+                        <span>Signature Rara Chicken</span>
+                    </li>
+                    <li class="flex items-center gap-3 text-sm">
+                        <i class="fas fa-check gold-text"></i>
+                        <span>Family & Corporate</span>
+                    </li>
+                    <li class="flex items-center gap-3 text-sm">
+                        <i class="fas fa-check gold-text"></i>
+                        <span>North Indian Classics</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-16 md:py-24 px-6 bg-black">
+        <div class="max-w-7xl mx-auto text-center mb-12 md:mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Signature Dishes</h2>
+            <p class="text-gray-500 text-sm">Handcrafted flavors from our kitchen to your table</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <!-- Non-Veg -->
+            <div class="space-y-6">
+                <h3 class="text-xl md:text-2xl font-bold gold-text border-b border-zinc-800 pb-2 flex items-center justify-between">
+                    Non-Veg <i class="fas fa-drumstick-bite text-sm"></i>
+                </h3>
+                <div class="group">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 class="font-bold group-hover:text-amber-500 transition">Rara Chicken</h4>
+                        <span class="gold-text font-semibold">₹549</span>
+                    </div>
+                    <p class="text-xs text-gray-500">Minced & boneless chicken in rich gravy</p>
+                </div>
+                <div class="group">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 class="font-bold group-hover:text-amber-500 transition">Butter Chicken</h4>
+                        <span class="gold-text font-semibold">₹499</span>
+                    </div>
+                    <p class="text-xs text-gray-500">Tandoori chicken in creamy tomato sauce</p>
+                </div>
+            </div>
+
+            <!-- Veg -->
+            <div class="space-y-6">
+                <h3 class="text-xl md:text-2xl font-bold gold-text border-b border-zinc-800 pb-2 flex items-center justify-between">
+                    Vegetarian <i class="fas fa-leaf text-sm"></i>
+                </h3>
+                <div class="group">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 class="font-bold group-hover:text-amber-500 transition">Handi Paneer</h4>
+                        <span class="gold-text font-semibold">₹449</span>
+                    </div>
+                    <p class="text-xs text-gray-500">Cottage cheese in traditional handi</p>
+                </div>
+                <div class="group">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 class="font-bold group-hover:text-amber-500 transition">Dal Makhani</h4>
+                        <span class="gold-text font-semibold">₹379</span>
+                    </div>
+                    <p class="text-xs text-gray-500">Slow cooked black lentils with butter</p>
+                </div>
+            </div>
+
+            <!-- Apps -->
+            <div class="space-y-6">
+                <h3 class="text-xl md:text-2xl font-bold gold-text border-b border-zinc-800 pb-2 flex items-center justify-between">
+                    Appetizers <i class="fas fa-fire text-sm"></i>
+                </h3>
+                <div class="group">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 class="font-bold group-hover:text-amber-500 transition">Chicken Barra</h4>
+                        <span class="gold-text font-semibold">₹489</span>
+                    </div>
+                    <p class="text-xs text-gray-500">Smoky chargrilled Mughlai style</p>
+                </div>
+                <div class="group">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 class="font-bold group-hover:text-amber-500 transition">Chilli Paneer</h4>
+                        <span class="gold-text font-semibold">₹399</span>
+                    </div>
+                    <p class="text-xs text-gray-500">Indo-Chinese spicy stir fry</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="py-16 md:py-24 px-6 bg-zinc-900">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Visit Us</h2>
+                <p class="text-gray-500 text-sm">Located at Sapphire 90 Mall, Gurgaon</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-6 items-stretch">
+                <!-- Contact Info Card -->
+                <div class="bg-black p-6 md:p-10 rounded-2xl border border-zinc-800 flex flex-col justify-between">
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="gold-bg p-3 rounded-full text-black shrink-0">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="text-sm md:text-base">
+                                <p class="font-bold text-white uppercase text-xs tracking-widest mb-1">Address</p>
+                                <p class="text-gray-400">Sapphire 90 Mall, S 215 Second Floor,<br>Sector 90, Gurgaon, Haryana</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="gold-bg p-3 rounded-full text-black shrink-0">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="text-sm md:text-base">
+                                <p class="font-bold text-white uppercase text-xs tracking-widest mb-1">Phone</p>
+                                <p class="text-gray-400">+91 93190 80715</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 flex flex-col sm:flex-row gap-3">
+                        <a href="https://www.google.com/maps/dir//Sapphire+90+Mall,+Gurugram" target="_blank" class="w-full text-center bg-zinc-800 py-4 rounded-md font-bold text-sm hover:bg-white hover:text-black transition">
+                            <i class="fas fa-directions mr-2"></i> Directions
+                        </a>
+                        <a href="tel:+919319080715" class="w-full text-center gold-bg text-black py-4 rounded-md font-bold text-sm hover:bg-white transition">
+                            <i class="fas fa-phone-alt mr-2"></i> Call Us
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Map -->
+                <div class="h-[300px] md:h-auto rounded-2xl overflow-hidden border border-zinc-800 relative">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3509.6133987042576!2d76.92482317616186!3d28.385627275803274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d3d5f99999999%3A0x9f99999999999999!2sSapphire%2090%20Mall!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+                        class="w-full h-full border-0 grayscale invert contrast-[1.1] brightness-[0.8]" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 border-t border-zinc-900">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div>
+                <h2 class="text-xl font-bold mb-4 brand-font gold-text uppercase">THE BLACK SALT</h2>
+                <p class="text-gray-500 text-sm leading-relaxed">Elevating dining with authentic flavors and contemporary style in Sector 90 Gurgaon.</p>
+                <div class="flex gap-4 mt-4 text-xl">
+                    <a href="#" class="text-gray-500 hover:text-amber-500"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-500 hover:text-amber-500"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+                <div class="grid grid-cols-2 gap-2 text-sm text-gray-500">
+                    <a href="#home" class="hover:text-amber-500">Home</a>
+                    <a href="#about" class="hover:text-amber-500">Our Story</a>
+                    <a href="#menu" class="hover:text-amber-500">Menu</a>
+                    <a href="#location" class="hover:text-amber-500">Find Us</a>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold mb-4">Open Hours</h3>
+                <p class="text-sm text-gray-500">Daily: 11:00 AM - 11:00 PM</p>
+                <p class="text-xs text-amber-500/60 mt-2 font-semibold">Live Music on Weekends</p>
+            </div>
+        </div>
+        <div class="text-center mt-12 text-gray-700 text-[10px] uppercase tracking-widest px-6">
+            &copy; 2026 The Black Salt. Designed for Excellence.
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('mobile-menu-button');
+        const closeBtn = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('active');
+            document.body.classList.toggle('overflow-hidden');
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+        closeBtn.addEventListener('click', toggleMenu);
+        
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                toggleMenu();
+            });
+        });
+    </script>
+</body>
+</html>
